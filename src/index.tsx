@@ -4,14 +4,13 @@ import "./index.css";
 import App from "./App";
 
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "@mui/material";
+import { AppThemeProvider } from "./extras/contexts";
+
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-
-import { LightTheme } from "./themes";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -20,9 +19,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ThemeProvider theme={LightTheme}>
+      <AppThemeProvider>
         <App />
-      </ThemeProvider>
+      </AppThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
